@@ -158,8 +158,6 @@ body::after {
   background: linear-gradient(to bottom, rgba(109,40,217,0.4), transparent);
 }
 
-}
-
 /* Glowing text on name in hero */
 .hero-name-glow {
   filter: drop-shadow(0 0 30px rgba(109,40,217,0.4));
