@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin, Heart } from 'lucide-react'
 const links = [
   { label: 'Sobre', href: '#sobre' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Cursos', href: '#cursos' },
+  { label: 'Trajetória', href: '#trajetoria' },
   { label: 'Contato', href: '#contato' },
 ]
 
@@ -38,7 +38,7 @@ export default function Footer() {
               <span className="font-display font-bold text-white">Lucas Amaral</span>
             </div>
             <p className="font-body text-white/35 text-sm leading-relaxed max-w-xs">
-              Desenvolvedor Full Stack em formação. Construindo o futuro, uma linha de código por vez.
+              Desenvolvedor Full Stack em formação, 16 anos, Indaiatuba – SP. Construindo o futuro com código.
             </p>
           </div>
 

@@ -1,25 +1,21 @@
 import { motion } from 'framer-motion'
 import { useInView } from './useInView'
-import { Code2, Globe, BookOpen, Target } from 'lucide-react'
+import { GraduationCap, Globe, MapPin, Lightbulb } from 'lucide-react'
 
-const stats = [
-  { icon: Code2, label: 'Linguagens em estudo', value: '4+' },
-  { icon: Globe, label: 'Inglês', value: 'Fluente' },
-  { icon: BookOpen, label: 'Ano letivo', value: '2º EM' },
-  { icon: Target, label: 'Foco', value: 'Full Stack' },
+const highlights = [
+  { icon: GraduationCap, label: 'E.E. Professora Helena de Campos Camargo', sub: '2º ano do Ensino Médio' },
+  { icon: Globe,         label: 'BC School — Inglês Intensivo',             sub: 'Fluente após anos de estudo' },
+  { icon: MapPin,        label: 'Jardim do Vale 2, Indaiatuba – SP',         sub: 'São Paulo, Brasil' },
+  { icon: Lightbulb,     label: 'Objetivo claro desde cedo',                sub: 'Desenvolvedor Full Stack' },
 ]
 
-const containerVariants = {
+const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.11 } },
 }
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40, filter: 'blur(6px)' },
-  visible: {
-    opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
-  },
+const item = {
+  hidden:  { opacity: 0, y: 35, filter: 'blur(6px)' },
+  visible: { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 }
 
 export default function About() {
@@ -27,94 +23,89 @@ export default function About() {
 
   return (
     <section id="sobre" className="relative py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #02010a 0%, #04052e 50%, #02010a 100%)' }}>
+      style={{ background: 'linear-gradient(180deg, #02010a 0%, #04052e 55%, #02010a 100%)' }}>
 
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-8 blur-[100px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #140152 0%, transparent 70%)' }} />
+      <div className="absolute right-0 top-0 h-full w-[500px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at 100% 40%, rgba(20,1,82,0.5) 0%, transparent 60%)' }} />
 
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-4">
+        <motion.div ref={ref} variants={container} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
+
+          <motion.div variants={item} className="flex items-center gap-3 mb-5">
             <span className="w-8 h-px" style={{ background: 'linear-gradient(90deg, #22007c, #7c3aed)' }} />
             <span className="font-mono text-xs tracking-widest uppercase text-purple-400">Sobre mim</span>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <motion.h2
-                variants={itemVariants}
-                className="font-display font-bold text-4xl md:text-5xl text-white mb-8 leading-tight"
-              >
-                Um desenvolvedor
-                <span className="block gradient-text">em construção</span>
+          <div className="grid lg:grid-cols-5 gap-16 items-start">
+            {/* Text — 3 cols */}
+            <div className="lg:col-span-3">
+              <motion.h2 variants={item} className="font-display font-bold leading-tight mb-8"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>
+                <span className="text-white">Dezesseis anos,</span>
+                <span className="block gradient-text">uma direção clara.</span>
               </motion.h2>
 
-              <motion.div variants={itemVariants}
-                className="space-y-5 font-body text-white/60 text-base md:text-lg leading-relaxed"
-              >
+              <motion.div variants={item} className="space-y-5 font-body text-white/55 text-base md:text-lg leading-relaxed">
                 <p>
-                  Sou <span className="text-white/85 font-medium">Lucas Gomes do Amaral</span>, estudante do 2º ano do ensino médio e apaixonado por tecnologia.
-                  Estou em formação como desenvolvedor Full Stack, com foco em <span className="text-purple-400">JavaScript, HTML e CSS</span>, além de lógica de programação em Portugol.
+                  Me chamo <span className="text-white/85 font-medium">Lucas Gomes do Amaral</span>.
+                  Estudo na <span className="text-purple-300">E.E. Professora Helena de Campos Camargo</span> em Indaiatuba, onde curso o 2º ano do ensino médio — e, em paralelo, dedico boa parte do meu tempo ao que realmente me move: programação e tecnologia.
                 </p>
                 <p>
-                  Tenho <span className="text-white/85 font-medium">inglês fluente</span> após quatro anos de estudo dedicado, o que me permite consumir documentações, cursos e conteúdos técnicos internacionais sem barreiras — e me abre portas para atuar no mercado global.
+                  Aprendi inglês na <span className="text-purple-300">BC School</span>, escola de inglês com metodologia intensiva e foco em conversação. Foram anos de prática constante que me levaram à <span className="text-white/85 font-medium">fluência plena</span> — o que hoje me permite consumir documentações internacionais, acompanhar conteúdos técnicos sem barreiras e me comunicar com equipes globais. Tenho planos de fazer intercâmbio para aprimorar ainda mais.
                 </p>
                 <p>
-                  Domino <span className="text-purple-400">Excel e o Pacote Office</span> em nível intermediário, e tenho sólido conhecimento em sistemas Windows. Minha próxima meta de linguagem é <span className="text-white/85 font-medium">Java</span> — ainda não comecei, mas está nos planos concretos para ampliar minha visão de back-end.
+                  Minha decisão de seguir desenvolvimento foi tomada cedo — e com convicção. Aprendo com facilidade, tenho disciplina para estudar de forma consistente e curiosidade genuína por entender como as coisas funcionam por baixo. Não espero a sala de aula me trazer tecnologia: eu vou atrás.
                 </p>
                 <p>
-                  Meu objetivo é <span className="text-purple-400">evoluir constantemente</span> e ingressar no mercado de tecnologia construindo soluções reais e impactantes — com disciplina, visão de longo prazo e paixão genuína pelo que faço.
+                  Meu objetivo é me tornar <span className="text-purple-300">desenvolvedor Full Stack</span>, construir produtos reais e colaborar com equipes que compartilham a mesma paixão por criar coisas úteis e bem feitas.
                 </p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mt-8">
-                <motion.button
-                  onClick={() => document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' })}
-                  whileHover={{ scale: 1.04, boxShadow: '0 0 30px rgba(34,0,124,0.5)' }}
-                  whileTap={{ scale: 0.97 }}
-                  className="px-7 py-3.5 rounded-xl text-white font-body font-medium text-sm transition-all duration-300"
-                  style={{ background: 'linear-gradient(135deg, #22007c, #4c1d95)' }}
-                >
-                  Vamos conversar →
-                </motion.button>
-              </motion.div>
+              <motion.button
+                variants={item}
+                onClick={() => document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' })}
+                whileHover={{ scale: 1.04, boxShadow: '0 0 35px rgba(34,0,124,0.55)' }}
+                whileTap={{ scale: 0.97 }}
+                className="mt-10 px-7 py-3.5 rounded-xl text-white font-body font-medium text-sm transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #22007c, #4c1d95)' }}
+              >
+                Vamos conversar →
+              </motion.button>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((s, i) => (
+            {/* Highlights — 2 cols */}
+            <div className="lg:col-span-2 grid grid-cols-1 gap-4">
+              {highlights.map((h, i) => (
                 <motion.div
-                  key={s.label}
-                  variants={itemVariants}
-                  custom={i}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="gradient-border rounded-2xl p-6 group transition-all duration-300 hover:glow-navy-sm"
-                  style={{ background: 'rgba(4, 5, 46, 0.5)' }}
+                  key={h.label}
+                  variants={item}
+                  whileHover={{ x: 4, scale: 1.01 }}
+                  className="gradient-border gradient-border-hover rounded-2xl p-5 flex items-center gap-4 transition-all duration-300"
+                  style={{ background: 'rgba(4, 5, 46, 0.55)' }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ background: 'linear-gradient(135deg, rgba(34,0,124,0.4), rgba(109,40,217,0.2))' }}>
-                    <s.icon size={18} className="text-purple-400" />
+                    <h.icon size={17} className="text-purple-400" />
                   </div>
-                  <div className="font-display font-bold text-2xl text-white mb-1">{s.value}</div>
-                  <div className="font-body text-white/40 text-sm">{s.label}</div>
+                  <div>
+                    <div className="font-body font-medium text-white/85 text-sm leading-snug">{h.label}</div>
+                    <div className="font-mono text-xs text-white/35 mt-0.5">{h.sub}</div>
+                  </div>
                 </motion.div>
               ))}
 
+              {/* Quote */}
               <motion.div
-                variants={itemVariants}
-                className="col-span-2 gradient-border rounded-2xl p-6"
-                style={{ background: 'rgba(4, 5, 46, 0.5)' }}
+                variants={item}
+                className="gradient-border rounded-2xl p-5 mt-1"
+                style={{ background: 'rgba(4, 5, 46, 0.4)' }}
               >
-                <p className="font-display text-white/70 text-base italic leading-relaxed">
-                  "Tecnologia não é apenas minha área de estudo — é o campo onde decidi construir meu futuro desde cedo."
+                <p className="font-display text-white/60 text-sm italic leading-relaxed">
+                  "Tecnologia não é só o que estudo — é o campo onde escolhi construir meu futuro."
                 </p>
                 <div className="mt-3 flex items-center gap-2">
                   <span className="w-4 h-px" style={{ background: '#7c3aed' }} />
-                  <span className="font-mono text-xs text-purple-400 tracking-wide">Lucas Amaral</span>
+                  <span className="font-mono text-xs text-purple-400/70">Lucas, 16 anos</span>
                 </div>
               </motion.div>
             </div>

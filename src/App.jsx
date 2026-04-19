@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
-import Courses from './components/Courses'
+import Vision from './components/Vision'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -14,14 +14,9 @@ function App() {
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 0.9,
+      wheelMultiplier: 0.85,
     })
-
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
+    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf) }
     requestAnimationFrame(raf)
     return () => lenis.destroy()
   }, [])
@@ -33,7 +28,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
-        <Courses />
+        <Vision />
         <Contact />
       </main>
       <Footer />
