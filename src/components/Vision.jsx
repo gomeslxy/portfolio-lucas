@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Galaxy from './Galaxy'
 import { useInView } from './useInView'
 import { Code2, Globe, BookOpen, Layers, Coffee, ArrowRight } from 'lucide-react'
 
@@ -62,6 +63,12 @@ export default function Vision() {
   return (
     <section id="trajetoria" className="relative py-32 overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #04052e 0%, #02010a 100%)' }}>
+
+      {/* Galaxy accent strip at top */}
+      <div className="absolute top-0 left-0 right-0 h-48 overflow-hidden opacity-40 pointer-events-none">
+        <Galaxy className="opacity-100" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, #04052e 100%)' }} />
+      </div>
 
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(20,1,82,0.6) 0%, transparent 70%)', filter: 'blur(80px)' }} />

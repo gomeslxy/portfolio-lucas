@@ -28,6 +28,23 @@ export default function About() {
       <div className="absolute right-0 top-0 h-full w-[500px] pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 100% 40%, rgba(20,1,82,0.5) 0%, transparent 60%)' }} />
 
+      {/* Floating star dots for atmosphere */}
+      {[...Array(12)].map((_, i) => (
+        <div key={i}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width:  `${1 + (i % 3) * 0.5}px`,
+            height: `${1 + (i % 3) * 0.5}px`,
+            left:   `${5 + (i * 7.8) % 90}%`,
+            top:    `${10 + (i * 11.3) % 80}%`,
+            background: i % 4 === 0 ? 'rgba(167,139,250,0.6)' : 'rgba(255,255,255,0.25)',
+            boxShadow: i % 3 === 0 ? '0 0 4px rgba(167,139,250,0.5)' : 'none',
+            animationDelay: `${i * 0.4}s`,
+            animationDuration: `${2 + (i % 4)}s`,
+          }}
+        />
+      ))}
+
       <div className="max-w-6xl mx-auto px-6">
         <motion.div ref={ref} variants={container} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
 
