@@ -44,9 +44,9 @@ export default function Galaxy({ className = '' }) {
             vy: -speeds[layer] * rand(0.05, 0.15),
             layer,
             color: Math.random() < 0.08
-              ? `rgba(167,139,250,`   // purple tint
+              ? `rgba(52,211,153,`    // emerald tint
               : Math.random() < 0.05
-              ? `rgba(196,181,253,`   // lavender
+              ? `rgba(110,231,183,`   // light emerald
               : `rgba(255,255,255,`,  // white
           })
         }
@@ -54,10 +54,10 @@ export default function Galaxy({ className = '' }) {
 
       // Nebula blobs
       nebulaClouds = [
-        { x: w * 0.2,  y: h * 0.35, rx: w * 0.25, ry: h * 0.22, color: 'rgba(34,0,124,',   alpha: 0.18 },
-        { x: w * 0.75, y: h * 0.6,  rx: w * 0.22, ry: h * 0.28, color: 'rgba(109,40,217,', alpha: 0.12 },
-        { x: w * 0.5,  y: h * 0.15, rx: w * 0.3,  ry: h * 0.18, color: 'rgba(76,29,149,',  alpha: 0.14 },
-        { x: w * 0.85, y: h * 0.2,  rx: w * 0.18, ry: h * 0.2,  color: 'rgba(20,1,82,',    alpha: 0.2  },
+        { x: w * 0.2,  y: h * 0.35, rx: w * 0.25, ry: h * 0.22, color: 'rgba(6,95,70,',    alpha: 0.18 },
+        { x: w * 0.75, y: h * 0.6,  rx: w * 0.22, ry: h * 0.28, color: 'rgba(5,150,105,',  alpha: 0.12 },
+        { x: w * 0.5,  y: h * 0.15, rx: w * 0.3,  ry: h * 0.18, color: 'rgba(4,120,87,',   alpha: 0.14 },
+        { x: w * 0.85, y: h * 0.2,  rx: w * 0.18, ry: h * 0.2,  color: 'rgba(2,44,34,',    alpha: 0.2  },
       ]
     }
 

@@ -95,8 +95,8 @@ export default function Cursor() {
               width:  size,
               height: size,
               transform: 'translate(-50%, -50%)',
-              background: `radial-gradient(circle, rgba(167,139,250,${opacity}), rgba(109,40,217,${opacity * 0.5}))`,
-              boxShadow: `0 0 ${size * 3}px rgba(109,40,217,${opacity * 0.7})`,
+              background: `radial-gradient(circle, rgba(52,211,153,${opacity}), rgba(5,150,105,${opacity * 0.5}))`,
+              boxShadow: `0 0 ${size * 3}px rgba(5,150,105,${opacity * 0.7})`,
               transition: 'opacity 0.1s',
             }}
           />
@@ -115,10 +115,10 @@ export default function Cursor() {
         style={{
           width: 36,
           height: 36,
-          borderColor: 'rgba(139,92,246,0.7)',
+          borderColor: 'rgba(52,211,153,0.7)',
           boxShadow: clicking
-            ? '0 0 20px rgba(109,40,217,0.8), 0 0 40px rgba(109,40,217,0.4)'
-            : '0 0 12px rgba(109,40,217,0.3)',
+            ? '0 0 20px rgba(5,150,105,0.8), 0 0 40px rgba(5,150,105,0.4)'
+            : '0 0 12px rgba(5,150,105,0.3)',
         }}
       />
 
@@ -134,8 +134,8 @@ export default function Cursor() {
         style={{
           width: 6,
           height: 6,
-          background: 'radial-gradient(circle, #c4b5fd, #7c3aed)',
-          boxShadow: '0 0 8px rgba(167,139,250,0.8), 0 0 16px rgba(109,40,217,0.5)',
+          background: 'radial-gradient(circle, #6ee7b7, #059669)',
+          boxShadow: '0 0 8px rgba(110,231,183,0.8), 0 0 16px rgba(5,150,105,0.5)',
         }}
       />
 
@@ -146,7 +146,7 @@ export default function Cursor() {
           initial={{ scale: 0.5, opacity: 0.8 }}
           animate={{ scale: 3, opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/60"
+          className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-400/60"
           style={{ width: 36, height: 36 }}
         />
       )}

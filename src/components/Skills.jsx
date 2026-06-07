@@ -65,7 +65,7 @@ function TiltCard({ children, className, style }) {
       <motion.div
         className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(109,40,217,0.12) 0%, transparent 55%)`,
+          background: `radial-gradient(circle at ${glowX} ${glowY}, rgba(5,150,105,0.12) 0%, transparent 55%)`,
         }}
       />
       {children}
@@ -79,7 +79,7 @@ function SkillBar({ level }) {
     <div ref={ref} className="h-0.5 rounded-full overflow-hidden bg-white/6 mt-4">
       <motion.div
         className="h-full rounded-full"
-        style={{ background: 'linear-gradient(90deg, #22007c, #8b5cf6)' }}
+        style={{ background: 'linear-gradient(90deg, #065f46, #34d399)' }}
         initial={{ width: 0 }}
         animate={{ width: inView ? `${level}%` : 0 }}
         transition={{ duration: 1.3, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
@@ -98,17 +98,17 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #02010a 0%, #04052e 35%, #140152 70%, #04052e 100%)' }}>
+      style={{ background: 'linear-gradient(180deg, #02010a 0%, #041a0d 35%, #052e16 70%, #041a0d 100%)' }}>
 
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(34,0,124,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(6,95,70,0.12) 0%, transparent 70%)', filter: 'blur(80px)' }} />
 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div ref={ref} initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }} className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-px" style={{ background: 'linear-gradient(90deg, #22007c, #7c3aed)' }} />
-            <span className="font-mono text-xs tracking-widest uppercase text-purple-400">Habilidades</span>
+            <span className="w-8 h-px" style={{ background: 'linear-gradient(90deg, #065f46, #059669)' }} />
+            <span className="font-mono text-xs tracking-widest uppercase text-emerald-400">Habilidades</span>
           </div>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
             Stack & <span className="gradient-text">domínio</span>
@@ -144,14 +144,14 @@ export default function Skills() {
                     <motion.div key={skill.name} variants={cardAnim}>
                       <TiltCard
                         className={`group relative gradient-border rounded-2xl p-5 overflow-hidden cursor-default transition-all duration-300 hover:glow-navy-sm ${isFuture ? 'opacity-55 hover:opacity-85' : ''}`}
-                        style={{ background: 'rgba(4, 5, 46, 0.55)' }}
+                        style={{ background: 'rgba(4, 26, 13, 0.55)' }}
                       >
                         <div className="relative z-10">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
                               <span className="text-xl">{skill.icon}</span>
                               <div>
-                                <div className="font-display font-semibold text-white text-sm group-hover:text-purple-200 transition-colors">
+                                <div className="font-display font-semibold text-white text-sm group-hover:text-emerald-200 transition-colors">
                                   {skill.name}
                                 </div>
                                 <div className="font-mono text-[10px] text-white/30 mt-0.5">

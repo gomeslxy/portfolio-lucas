@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         black: '#02010a',
-        prussian: '#04052e',
-        twilight: '#140152',
-        navy: '#22007c',
+        prussian: '#041a0d',
+        twilight: '#052e16',
+        navy: '#065f46',
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],

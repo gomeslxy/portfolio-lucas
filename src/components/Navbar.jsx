@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { label: 'Sobre',      href: '#sobre' },
   { label: 'Skills',     href: '#skills' },
+  { label: 'Projetos',   href: '#projetos' },
   { label: 'Trajetória', href: '#trajetoria' },
   { label: 'Contato',    href: '#contato' },
 ]
@@ -41,11 +42,11 @@ export default function Navbar() {
               exit={{ opacity: 0, y: -18, scale: 0.94 }}
               transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
               className="pointer-events-auto mt-4 flex items-center gap-0.5 px-3 py-2.5 rounded-2xl glass-strong"
-              style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(109,40,217,0.18)' }}
+              style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(5,150,105,0.18)' }}
             >
               <button onClick={() => window.scrollTo({ top: 0 })}
                 className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-mono font-bold text-white mr-2 flex-shrink-0"
-                style={{ background: 'linear-gradient(135deg, #22007c, #6d28d9)' }}>
+                style={{ background: 'linear-gradient(135deg, #065f46, #059669)' }}>
                 LG
               </button>
               {navLinks.map((link) => (
@@ -57,7 +58,7 @@ export default function Navbar() {
               <motion.button onClick={() => handleNav('#contato')}
                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
                 className="ml-1 px-4 py-1.5 rounded-xl text-sm font-body font-medium text-white"
-                style={{ background: 'linear-gradient(135deg, #22007c, #4c1d95)' }}>
+                style={{ background: 'linear-gradient(135deg, #065f46, #047857)' }}>
                 Contato
               </motion.button>
             </motion.div>
@@ -70,7 +71,7 @@ export default function Navbar() {
               <button onClick={() => window.scrollTo({ top: 0 })}
                 className="font-display font-bold text-lg tracking-tight flex items-center gap-2 group">
                 <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono font-bold text-white"
-                  style={{ background: 'linear-gradient(135deg, #22007c, #6d28d9)' }}>LG</span>
+                  style={{ background: 'linear-gradient(135deg, #065f46, #059669)' }}>LG</span>
                 <span className="text-white/90 group-hover:text-white transition-colors">
                   Lucas <span className="gradient-text">Amaral</span>
                 </span>
@@ -84,14 +85,14 @@ export default function Navbar() {
                     className="px-4 py-2 text-sm font-body text-white/55 hover:text-white rounded-lg transition-all duration-300 hover:bg-white/5 relative group">
                     {link.label}
                     <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-4"
-                      style={{ background: 'linear-gradient(90deg, #22007c, #7c3aed)' }} />
+                      style={{ background: 'linear-gradient(90deg, #065f46, #059669)' }} />
                   </motion.button>
                 ))}
                 <motion.button onClick={() => handleNav('#contato')}
                   initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }}
                   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
                   className="ml-4 px-5 py-2.5 rounded-xl text-sm font-body font-medium text-white glow-navy-sm"
-                  style={{ background: 'linear-gradient(135deg, #22007c, #4c1d95)' }}>
+                  style={{ background: 'linear-gradient(135deg, #065f46, #047857)' }}>
                   Fale comigo
                 </motion.button>
               </nav>
@@ -118,7 +119,7 @@ export default function Navbar() {
             ))}
             <button onClick={() => handleNav('#contato')}
               className="mt-2 px-4 py-3 rounded-xl text-white font-body font-medium text-center"
-              style={{ background: 'linear-gradient(135deg, #22007c, #4c1d95)' }}>
+              style={{ background: 'linear-gradient(135deg, #065f46, #047857)' }}>
               Fale comigo
             </button>
           </motion.div>

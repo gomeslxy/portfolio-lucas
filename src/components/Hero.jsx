@@ -34,7 +34,7 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: 'radial-gradient(ellipse 100% 90% at 50% 0%, #0d0035 0%, #04052e 40%, #02010a 100%)' }}
+      style={{ background: 'radial-gradient(ellipse 100% 90% at 50% 0%, #021a0a 0%, #041a0d 40%, #02010a 100%)' }}
     >
       {/* Galaxy canvas — full hero background */}
       <Galaxy className="opacity-90" />
@@ -48,17 +48,17 @@ export default function Hero() {
         style={{ background: 'linear-gradient(to bottom, transparent, #02010a)' }} />
 
       {/* Parallax glow orbs */}
-      <motion.div style={{ x: orbX, y: orbY }}
+      <motion.div
         className="absolute top-[30%] left-[45%] w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(34,0,124,0.22) 0%, transparent 65%)', filter: 'blur(80px)', x: orbX, y: orbY }} />
-      <motion.div style={{ x: orb2X, y: orb2Y }}
+        style={{ background: 'radial-gradient(circle, rgba(6,95,70,0.22) 0%, transparent 65%)', filter: 'blur(80px)', x: orbX, y: orbY }} />
+      <motion.div
         className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(109,40,217,0.15) 0%, transparent 65%)', filter: 'blur(70px)', x: orb2X, y: orb2Y }} />
+        style={{ background: 'radial-gradient(circle, rgba(5,150,105,0.15) 0%, transparent 65%)', filter: 'blur(70px)', x: orb2X, y: orb2Y }} />
 
       {/* Spinning orbital rings */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block">
-        <div className="orbital  w-[560px] h-[560px] rounded-full border border-purple-800/12 absolute -translate-x-1/2 -translate-y-1/2" />
-        <div className="orbital-reverse w-[800px] h-[800px] rounded-full border border-indigo-900/8  absolute -translate-x-1/2 -translate-y-1/2" />
+        <div className="orbital  w-[560px] h-[560px] rounded-full border border-emerald-800/12 absolute -translate-x-1/2 -translate-y-1/2" />
+        <div className="orbital-reverse w-[800px] h-[800px] rounded-full border border-emerald-900/8  absolute -translate-x-1/2 -translate-y-1/2" />
         {/* Dot on the ring */}
         <motion.div
           animate={{ rotate: 360 }}
@@ -67,7 +67,7 @@ export default function Hero() {
           style={{ width: 560, height: 560 }}
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full"
-            style={{ background: '#7c3aed', boxShadow: '0 0 12px #7c3aed, 0 0 24px rgba(124,58,237,0.5)' }} />
+            style={{ background: '#059669', boxShadow: '0 0 12px #059669, 0 0 24px rgba(5,150,105,0.5)' }} />
         </motion.div>
       </div>
 
@@ -76,8 +76,8 @@ export default function Hero() {
 
         {/* Badge */}
         <motion.div {...seq(0, 0.7)}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 glass text-sm font-body text-purple-300">
-          <Sparkles size={13} className="text-purple-400" />
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 glass text-sm font-body text-emerald-300">
+          <Sparkles size={13} className="text-emerald-400" />
           <span>Disponível para estágio</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
         </motion.div>
@@ -86,7 +86,7 @@ export default function Hero() {
         <motion.h1 {...seq(1, 1.05)}
           className="font-display font-extrabold leading-[0.9] mb-5"
           style={{ fontSize: 'clamp(3rem, 9.5vw, 8rem)' }}>
-          <span className="block text-white drop-shadow-[0_0_40px_rgba(109,40,217,0.3)]">Lucas Gomes</span>
+          <span className="block text-white drop-shadow-[0_0_40px_rgba(5,150,105,0.3)]">Lucas Gomes</span>
           <span className="block gradient-text text-glow">do Amaral</span>
         </motion.h1>
 
@@ -98,7 +98,7 @@ export default function Hero() {
 
         {/* Location */}
         <motion.div {...seq(2.4, 0.7)} className="flex items-center justify-center gap-1.5 mb-9">
-          <MapPin size={11} className="text-purple-500" />
+          <MapPin size={11} className="text-emerald-500" />
           <span className="font-body text-white/28 text-sm">Indaiatuba, SP</span>
         </motion.div>
 
@@ -111,12 +111,12 @@ export default function Hero() {
         {/* CTAs */}
         <motion.div {...seq(4, 0.8)} className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <motion.button
-            onClick={() => document.querySelector('#trajetoria')?.scrollIntoView({ behavior: 'smooth' })}
-            whileHover={{ scale: 1.06, boxShadow: '0 0 60px rgba(34,0,124,0.7), 0 0 120px rgba(34,0,124,0.28)' }}
+            onClick={() => document.querySelector('#projetos')?.scrollIntoView({ behavior: 'smooth' })}
+            whileHover={{ scale: 1.06, boxShadow: '0 0 60px rgba(6,95,70,0.7), 0 0 120px rgba(6,95,70,0.28)' }}
             whileTap={{ scale: 0.95 }}
             className="px-9 py-4 rounded-2xl text-white font-body font-medium text-base transition-shadow duration-300"
-            style={{ background: 'linear-gradient(135deg, #22007c 0%, #4c1d95 55%, #7c3aed 100%)' }}>
-            Minha trajetória
+            style={{ background: 'linear-gradient(135deg, #065f46 0%, #047857 55%, #059669 100%)' }}>
+            Ver projetos
           </motion.button>
           <motion.button
             onClick={() => document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' })}
